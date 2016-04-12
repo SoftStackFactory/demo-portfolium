@@ -4,3 +4,4 @@
 node_modules/
 platforms/
 plugins/
+www/js/SSFServices/ignored-api-key.js

@@ -9,7 +9,6 @@ Instructions:
 4.  If you change 'shouldTranslate' to true, tell John to finish the translate listener.
 */
 
-
 angular.module('SSFConfig', [])
 .constant('SSFConfigConstants', {
     //  if translation is a feature of the app, switch from false to true and review step 4.
@@ -27,16 +26,8 @@ angular.module('SSFConfig', [])
 }])
 .config(['SSFConfigConstants', function(SSFConfigConstants) {
     SSFConfigConstants['EndpointUrl'] = {
-        'url': 'https://api.portfolium.com/'
+        'url': 'https://api.portfolium.com/',
+        'apiKey': 'redefined-in-another-git-ignored-file'
     };
 }])
-// .run(['SSFConfigConstants', function(SSFConfigConstants) {
-//     //determine which SSFConfigConstants.EndpointUrl.url we use
-//     if(ionic.Platform.isWebView()) {
-//         SSFConfigConstants.EndpointUrl.url = 'https://api.portfolium.com/';
-//     }
-//     else {
-//         SSFConfigConstants.EndpointUrl.url = 'https://tktest-v3-jbrownssf.c9.io/api/';
-//     }
-// }])
 ;
