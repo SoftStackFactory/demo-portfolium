@@ -1,0 +1,52 @@
+<ion-view view-title="{{jobData.company.name}}">
+    <ion-nav-buttons></ion-nav-buttons>
+    <ion-content>
+        
+        <div class="list animate-ripple">
+            <img class="item" width="100%" ng-src="{{jobData.company.cover.url_https}}"></img>
+            <div class="padding text-center calm results-title item" style="font-size: 20px;">
+                {{jobData.title}}
+            </div>
+            
+            
+            <div class="list">
+                <div class="item item-divider">
+                    Type:
+                </div>
+                <div class="item item-text-wrap">
+                    {{jobData.type}}
+                </div>
+                <div class="item item-divider">
+                    What we want:
+                </div>
+                <div class="item item-text-wrap">
+                    {{jobData.wanted}}
+                </div>
+                <div class="item item-divider">
+                    About us:
+                </div>
+                <div class="item item-text-wrap">
+                    {{jobData.company.description}} <br>
+                    Click <a ng-click="inAppBrowser(jobData.company.url)">here</a> to view our website!
+                </div>
+                <div class="item item-divider">
+                    Job Description:
+                </div>
+                <div class="item item-text-wrap">
+                    {{jobData.description}}
+                </div>
+            </div>
+        </div>
+            
+    </ion-content>
+        <a ng-click="inAppBrowser('https://www.facebook.com/' + jobData.company.facebook_url)">
+            <button id="fab" class="button button-positive button-fab button-fab-bottom-left">
+                <icon class="icon ion-social-facebook"></icon>
+            </button>
+        </a>
+        <a ng-click="inAppBrowser('https://www.linkedin.com/' + jobData.company.linkedin_url)">
+            <button id="fab" class="button button-positive button-fab button-fab-bottom-right">
+                <icon class="icon ion-social-linkedin"></icon>
+            </button>
+        </a>
+</ion-view>

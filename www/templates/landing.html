@@ -1,0 +1,27 @@
+<ion-view view-title="Portfolium - Jobs">
+    <ion-nav-buttons></ion-nav-buttons>
+    <ion-content class="padding">
+        <ion-refresher class="" on-refresh="doRefresh()">
+    
+        </ion-refresher>
+        <div class="list card" ng-repeat="job in serviceArray" ng-show="{{job.published}}" ng-click="moreJobDetails($index)">
+            <div class="item item-avatar">
+                <img ng-src="{{job.company.logo.url_https}}">
+                <h2>{{job.title}}</h2>
+                <p>{{job.company.location}}</p>
+            </div>
+            
+            <div class="item item-image">
+                <img ng-src="{{job.company.cover.url_https}}"></img>
+            </div>
+            
+            <div class="item item-text-wrap assertive">
+                {{job.company.description.slice(0, 125)}}{{addEllipses(job.company.description)}}
+            </div>
+        </div>
+        <ion-infinite-scroll class="" on-infinite="getJobs()" distance="10%" ng-if="moreDataCanBeLoaded">
+          
+        </ion-infinite-scroll>
+        
+    </ion-content>
+</ion-view>

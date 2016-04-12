@@ -1,0 +1,10 @@
+{
+  "name": "portfolium",
+  "app_id": "6d81d304",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://apiqa.portfolium.com/"
+    }
+  ]
+}
